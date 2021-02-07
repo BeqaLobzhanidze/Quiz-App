@@ -3,7 +3,7 @@ import './App.css';
 import MainPage from './Components/MainPage';
 import Quiz from './Components/Quiz';
 import axios from "axios"
-import {BrowserRouter , Route} from "react-router-dom"
+import {HashRouter , Route} from "react-router-dom"
 
 function App() {
 
@@ -22,7 +22,7 @@ function App() {
   return (
     
     <div className="App">
-         <BrowserRouter>
+         <HashRouter>
        
          <Route path="/" exact>
            <MainPage data={data} setValue={setValue} setIndex={setIndex} value={value} index={index}/>
@@ -30,7 +30,7 @@ function App() {
          <Route path="/test" exact>
            <Quiz index={index} value={value} setValue={setValue} setIndex={setIndex}/>
          </Route>
-       </BrowserRouter>
+       </HashRouter>
       
     </div>
   );
