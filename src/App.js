@@ -22,8 +22,6 @@ function App() {
   return (
     
     <div className="App">
-      {console.log("value " , value)}
-      {console.log("index " , index)}
          <BrowserRouter>
        
          <Route path="/" exact>

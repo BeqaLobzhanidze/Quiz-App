@@ -3,7 +3,6 @@ import styles from "./Quiz.module.css"
 import axios from "axios"
 import Button from './Button';
 import {Link} from 'react-router-dom'
-import App from '../App';
 
 
 
