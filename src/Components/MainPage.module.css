@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Hanalei&family=Lobster&family=Pacifico&display=swap');
+.container {
+  width: 60%;
+  height: 80vh;
+  border: 20px dashed aliceblue;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  background-color: purple;
+}
+
+.container h1 {
+  font-size: 45px;
+  font-family: 'Hanalei', cursive;
+  letter-spacing: .5rem;
+  text-transform: uppercase;
+  color: aliceblue;
+}
+.category , 
+.level {
+  width: 500px;
+  display: flex;
+}
+.category label , 
+.level label {
+  font-size: 20px;
+  font-family: 'Lobster', cursive;
+  letter-spacing: .2rem;
+  color: aliceblue;
+  margin-right: 50px;
+}
+.category select ,
+.level select {
+  width: 200px;
+  height: 30px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 5px solid aliceblue;
+  color: aliceblue;
+  font-family: 'Cinzel', serif;
+  cursor: pointer;
+}
+.category select option,
+.level select option {
+  background-color: black;
+}
+.level select:hover,
+.category select:hover {
+  background-color: black;
+}
+
+.button {
+  font-size: 15px;
+  padding: 15px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  border: 5px dashed white;
+  color: aliceblue;
+  font-family: 'Pacifico', cursive;
+  letter-spacing: .2rem;
+}
+.button:active {
+  border: 5px dashed white;
+}
+.button:hover {
+  background-color: rgb(17, 5, 126);
+}
+@media all and (max-width:950px) {
+  
+  .category , 
+  .level {
+    flex-direction: column;
+    text-align: center;
+  }
+  .category label , 
+  .level label {
+    width: 200px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+  .category select , 
+  .level select {
+    margin: 0 auto;
+  }
+  .button {
+    font-size: 10px;
+    padding: 10px;
+  }
+}
+@media all and (max-width:650px) {
+  .container {
+    width: 100%;
+    height: 100vh;
+  }
+}
+@media all and (max-width:500px) {
+  .category , 
+  .level {
+    width: 200px;
+  }
+  .category select option,
+.level select option {
+  font-size: 8px;
+}
+}
