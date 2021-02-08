@@ -17,13 +17,37 @@ function Quiz({index , value , setValue , setIndex}) {
     axios.get(`https://opentdb.com/api.php?amount=10&category=${index}&difficulty=${value}&fbclid=IwAR0qxjASbave_JeKnNhSC3ZTZM9dMyxkOX_B-cLEtn5oc5fZfIXhbCvbu2c&type=multiple`)
          .then(res => setData(res.data.results))
          .catch(err => console.log(err))
-  } , [index])
+  } , [index , value])
    if(test.length === 0 ) {
-     return "loading..."
+     return <section>
+       <div className={styles.loader}>
+      <span style={{"--i":"1"}}></span>
+      <span style={{"--i":"2"}}></span>
+      <span style={{"--i":"3"}}></span>
+      <span style={{"--i":"4"}}></span>
+      <span style={{"--i":"5"}}></span>
+      <span style={{"--i":"6"}}></span>
+      <span style={{"--i":"7"}}></span>
+      <span style={{"--i":"8"}}></span>
+      <span style={{"--i":"9"}}></span>
+      <span style={{"--i":"10"}}></span>
+      <span style={{"--i":"11"}}></span>
+      <span style={{"--i":"12"}}></span>
+      <span style={{"--i":"13"}}></span>
+      <span style={{"--i":"14"}}></span>
+      <span style={{"--i":"15"}}></span>
+      <span style={{"--i":"16"}}></span>
+      <span style={{"--i":"17"}}></span>
+      <span style={{"--i":"18"}}></span>
+      <span style={{"--i":"19"}}></span>
+      <span style={{"--i":"20"}}></span>
+
+    </div>
+     </section>
    }
-   let shuffledArray = [] ; 
+   let shuffledArray = []; 
    if(gameend) {
-     shuffledArray = [test[count].correct_answer , test[count].incorrect_answers[0] , test[count].incorrect_answers[1] , test[count].incorrect_answers[2]].sort(() => Math.floor(Math.random() - 0.5)) ; 
+     shuffledArray = [test[count].correct_answer , test[count].incorrect_answers[0] , test[count].incorrect_answers[1] , test[count].incorrect_answers[2]].sort(() => Math.floor(Math.random() - 0.5)); 
    }
    
    const shufflingArray = item => {
@@ -52,26 +76,21 @@ function Quiz({index , value , setValue , setIndex}) {
     <div className={styles.container}>
       {gameend ? 
       <>
-       (
         <div dangerouslySetInnerHTML= {{__html: test[count].question}} className={styles.question} />
-        
-      <div className={styles.answers}>
-        {console.log(shuffledArray)}
-        <Button shufflingArray={shufflingArray} shuffledArray={shuffledArray} />
-      </div>
-      )
+        <div className={styles.answers}>
+          <Button shufflingArray={shufflingArray} shuffledArray={shuffledArray} />
+        </div>
       </> : 
       <>
-      <div className = {styles.score}>Your Score is {score}</div>
-      <div className={styles.flex}>
-      <button className={styles.reset} onClick = {restart}>Restart</button>
-      <Link to="/">
-      <button className={styles.new} onClick = {update}>New Quiz</button>
-      </Link>
-      </div>
+        <div className = {styles.score}>Your Score is {score}</div>
+        <div className={styles.flex}>
+          <button className={styles.reset} onClick = {restart}>Restart</button>
+          <Link to="/">
+            <button className={styles.new} onClick = {update}>New Quiz</button>
+          </Link>
+        </div>
       </>
-      }
-      
+      } 
     </div>
   )
 }
