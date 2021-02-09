@@ -51,6 +51,13 @@
   .answers button {
     padding: 30px;
   }
+  /* .new:hover , 
+  .reset:hover {
+  opacity: 1  !important;
+} */
+.answers button:hover {
+  opacity: 1;
+}
 }
 @media all and (max-width: 500px) {
   .answers button {
